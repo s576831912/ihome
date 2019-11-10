@@ -20,5 +20,9 @@ func main() {
 		})
 	}
 	model.InitModel()
+	//model.InsertData()
+	//model.SearchData()
+	//model.UpdateData()
+	model.DeleteData()
 	router.Run(":8099")
 }
