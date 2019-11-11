@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	"ihomebj5q/model"
+	"fmt"
 )
 
 func main() {
@@ -19,10 +20,17 @@ func main() {
 			ctx.Writer.WriteString("111222")
 		})
 	}
-	model.InitModel()
+	//model.InitModel()
 	//model.InsertData()
 	//model.SearchData()
 	//model.UpdateData()
-	model.DeleteData()
+	//model.DeleteData()
+	//model.InsertTeacher()
+	err := model.InitDb()
+	if err!=nil {
+		//把错误打印到日志上,
+		fmt.Println(err)
+		return
+	}
 	router.Run(":8099")
 }
